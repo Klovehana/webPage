@@ -92,7 +92,7 @@
     "message": "ご主人様の弱いところ、全部見つけちゃうよ♡",
     "isNew": false,
     "isOff": true,
-    "isRecommended": true,
+    "isRecommended": false,
     "special": {
       "name": "空崎ヒナ",
       "type": "タコつぼ",
@@ -176,7 +176,7 @@
     "message": "ご主人様の熱いもの、全部冷やしてあげる♡",
     "isNew": false,
     "isOff": true,
-    "isRecommended": true,
+    "isRecommended": false,
     "special": {
       "name": "ネロ",
       "type": "上付き",
