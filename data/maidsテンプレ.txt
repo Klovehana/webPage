@@ -1,40 +1,45 @@
+この通りに入力すると増やせます。
   {
-    "id": "1",
-    "name": "翠",
-    "birthday": "4月1日",
-    "likes": "いちごミルク",
-    "type": "王道系",
-    "message": "ご主人様を笑顔にします♡",
+    "id": "数字（ここのidとimages/maidsのpngを合わせてください）",
+    "name": "源氏名",
+    "birthday": "誕生日",
+    "likes": "好きなもの",
+    "type": "タイプ",
+    "message": "表メッセージ",
+    "isNew": 表：新人/裏：処女,
+    "isOff": 表：休憩中/裏：接客中,
+    "isRecommended": 表：おすすめ/裏：排卵日,
+    "special": {
+      "name": "本名",
+      "type": "膣のタイプなど",
+      "message": "裏メッセージ",
+      "likes": "性感帯など",
+      "sizes": "３サイズ",
+      "drinksPerWeek": "オナニーの頻度",
+      "waterBottle": "射精させた量",
+      "lover": "ご主人様の名前"
+    }
+  },
+
+コピペ用
+  {
+    "id": "",
+    "name": "",
+    "birthday": "",
+    "likes": "",
+    "type": "",
+    "message": "",
     "isNew": false,
     "isOff": false,
     "isRecommended": false,
     "special": {
-      "name": "姫島朱乃",
-      "type": "秘密系",
-      "message": "特別なお給仕します♡",
-      "sizes": "B88 / W56 / H84",
-      "drinksPerWeek": "3回",
-      "waterBottle": "750",
-      "lover": "？？？"
-    }
-  },
-    {
-id
-name
-birthday
-likes
-type
-message
-isNew
-isOff
-isRecommended
-special
-name
-type
-message
-sizes
-drinksPerWeek
-waterBottle
-lover
+      "name": "",
+      "type": "",
+      "message": "",
+      "likes": "",
+      "sizes": "",
+      "drinksPerWeek": "",
+      "waterBottle": "",
+      "lover": ""
     }
   },
