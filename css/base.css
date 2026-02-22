@@ -10,14 +10,3 @@ body {
 body.fade {
     transition: background-color 0.5s, color 0.5s;
 }
-
-/* 初期フェード */
-body.fade-in {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* 描画完了時に追加 */
-body.fade-in.visible {
-    opacity: 1;
-}
