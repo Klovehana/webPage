@@ -40,5 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(err => {
             console.error("Header error:", err);
         });
+    console.log("loadHeader() が呼ばれました2"); // ← ここで確認
 
 });
