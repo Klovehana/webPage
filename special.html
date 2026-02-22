@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>スペシャルページ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="special-page">
+    <script src="js/load-header.js"></script>
+    <div class="heart-bg"></div>
+    <script src="js/heart-bg.js" defer></script>
+    <script src="js/page-transition.js" defer></script>
+
+    <div class="special-container">
+        <h1>スペシャルページ</h1>
+        <p>パスワードを入力してください❤</p>
+
+        <!-- JSと一致させる -->
+        <input type="password" id="passwordInput">
+        <button onclick="checkPassword()">入室</button>
+        <p id="message"></p>
+
+        <hr>
+        <button onclick="resetMode()">退室</button>
+    </div>
+
+    <script src="js/special-mode.js"></script>
+
+</body>
+
+</html>

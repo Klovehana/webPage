@@ -1,0 +1,26 @@
+[
+  {
+    "id": "omurice",
+    "name": "らぶらぶ♡オムライス",
+    "price": 1200,
+    "category": "food",
+    "image": "images/menu/omurice.jpg",
+    "description": "メイドがお絵かきします♡"
+  },
+  {
+    "id": "coffee",
+    "name": "ご主人様ブレンド",
+    "price": 800,
+    "category": "drink",
+    "image": "images/menu/coffee.jpg",
+    "description": "特製オリジナルブレンド"
+  },
+  {
+    "id": "cheki",
+    "name": "記念チェキ",
+    "price": 1000,
+    "category": "option",
+    "image": "images/menu/cheki.jpg",
+    "description": "思い出を形に♡"
+  }
+]

@@ -1,0 +1,12 @@
+/* ---------- 基本 ---------- */
+body {
+    margin: 0;
+    font-family: "Hiragino Maru Gothic ProN", sans-serif;
+    background: #fff0f5;
+    text-align: center;
+}
+
+/* フェード演出 */
+body.fade {
+    transition: background-color 0.5s, color 0.5s;
+}

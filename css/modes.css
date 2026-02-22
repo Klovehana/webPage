@@ -1,0 +1,92 @@
+/* ========================================
+   MOSAIC MODE
+======================================== */
+
+/* モザイク画像 */
+.overlay-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mosaic-mode-active .overlay-image {
+    display: block;
+}
+
+
+/* ========================================
+   SECRET MODE - BASE
+======================================== */
+
+.secret-mode {
+    background-color: #1a001a;
+    color: #ffccff;
+}
+
+.secret-mode .site-header {
+    background-color: black;
+}
+
+
+/* ========================================
+   SECRET MODE - CARDS
+======================================== */
+
+.secret-mode .maid-card,
+.secret-mode .menu-card {
+    background-color: #330033;
+    border: 2px solid #ff66ff;
+}
+
+.secret-mode .btn {
+    background: #660066;
+}
+
+
+/* ========================================
+   SECRET MODE - RECOMMENDED CARD
+======================================== */
+
+.secret-mode .maid-card.recommended {
+    border: 2px solid #ff00cc;
+    background: linear-gradient(145deg,
+            rgba(255, 0, 150, 0.15),
+            rgba(80, 0, 80, 0.6));
+    box-shadow:
+        inset 0 0 15px rgba(255, 0, 200, 0.5),
+        0 0 25px rgba(255, 0, 200, 0.8);
+    animation: sexyGlow 2s infinite;
+}
+
+
+/* ========================================
+   SECRET MODE - TEXT
+======================================== */
+
+.secret-mode .maid-card h3 {
+    color: #ff66ff;
+    text-shadow: 0 0 8px rgba(255, 0, 200, 0.8);
+}
+
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes sexyGlow {
+    0% {
+        box-shadow: 0 0 10px #ff00cc;
+    }
+
+    50% {
+        box-shadow: 0 0 30px #ff00cc;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #ff00cc;
+    }
+}

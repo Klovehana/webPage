@@ -1,0 +1,63 @@
+/* ---------- グリッド ---------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4列固定 */
+    gap: 20px;
+    /* 横・縦ともに20px */
+    padding: 30px;
+    max-width: 1200px;
+    /* 横幅安定させる（任意） */
+    margin: 0 auto;
+}
+
+/* カードは幅100% */
+.maid-card {
+    width: 100%;
+}
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ---------- 詳細 ---------- */
+.detail-container .image-wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.message {
+    margin: 15px 0;
+}
+
+/* ---------- 画像ラッパー ---------- */
+.image-wrapper {
+    position: relative;
+    display: block;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: filter 0.5s, opacity 0.5s;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}

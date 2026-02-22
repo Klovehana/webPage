@@ -1,0 +1,244 @@
+@import url("base.css");
+@import url("header.css");
+@import url("layout.css");
+@import url("cards.css");
+@import url("badges.css");
+@import url("modes.css");
+
+
+/* ========================================
+   HEART BACKGROUND
+======================================== */
+
+.heart-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    opacity: 0.4;
+    animation: floatHeart linear infinite;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   PAGE FADE
+======================================== */
+
+body {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+    transform: scale(1.02);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+html {
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+}
+
+
+/* ========================================
+   MOSAIC HEART EFFECT
+======================================== */
+
+.mosaic-heart {
+    position: fixed;
+    width: 400px;
+    height: auto;
+
+    opacity: 0;
+    z-index: -10;
+    pointer-events: none;
+
+    animation: popFade 20s ease-in-out forwards;
+}
+
+@keyframes popFade {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+body.mosaic-mode-active .heart-bg {
+    display: none;
+}
+
+
+/* ========================================
+   CONTENT WRAPPER
+======================================== */
+
+.hero,
+.info {
+    position: relative;
+    z-index: 2;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+}
+
+
+/* ========================================
+   DETAIL CONTAINER
+======================================== */
+
+.detail-container {
+    max-width: 900px;
+    margin: 140px auto 100px;
+    padding: 50px 40px;
+
+    position: relative;
+    z-index: 10;
+
+    background: #ffffff;
+    border-radius: 30px;
+    border: 4px solid #ffb6d5;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.08),
+        0 0 0 10px rgba(255, 182, 213, 0.15);
+}
+
+.detail-container::before {
+    content: "MAID PROFILE ♡";
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 8px 28px;
+
+    background: #ffb6d5;
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    box-shadow: 0 5px 15px rgba(255, 182, 213, 0.4);
+}
+
+
+/* ========================================
+   DETAIL CARD CONTENT
+======================================== */
+
+.maid-info {
+    padding: 25px;
+    background: rgba(255, 182, 213, 0.08);
+    border-radius: 20px;
+}
+
+
+/* ========================================
+   SECRET MODE (DETAIL PAGE EXTENSIONS)
+======================================== */
+
+body.secret-mode .maid-card {
+    background: #2a001f;
+    color: #ff8fcf;
+    border: 2px solid #ff1493;
+    box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
+}
+
+body.secret-mode .maid-info h2 {
+    color: #ff4da6;
+}
+
+body.secret-mode .maid-info strong {
+    color: #ff69b4;
+}
+
+body.secret-mode .maid-info .message {
+    color: #ffc1e3;
+}
+
+body.secret-mode .detail-container {
+    background: #1a0013;
+    border: 4px solid #ff1493;
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 10px rgba(255, 20, 147, 0.2);
+}
+
+body.secret-mode .detail-container::before {
+    background: #ff1493;
+}
+
+/* ========================================
+   SECRET MODE - HERO / INFO FIX
+======================================== */
+
+body.secret-mode .hero,
+body.secret-mode .info {
+    background: rgba(50, 0, 50, 0.7);
+}
+
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    /* ← 全体を中央へ */
+    gap: 40px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    /* スマホ対応 */
+}
+
+.special-extra {
+    background: #fff0f6;
+    padding: 20px;
+    border-radius: 16px;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+}
+
+.special-extra h3 {
+    color: #ff4da6;
+    margin-bottom: 10px;
+}
+
+.special-extra p {
+    margin: 6px 0;
+    font-size: 14px;
+}

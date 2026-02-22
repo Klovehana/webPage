@@ -1,0 +1,61 @@
+/* ---------- 新人バッジ ---------- */
+.newbie-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ff1493;
+    z-index: 10;
+}
+
+.newbie-badge span {
+    color: #ff1493;
+}
+
+.newbie-badge img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
+    filter: none !important;
+    z-index: 11;
+}
+
+/* ---------- お休みバッジ ---------- */
+.off-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.off-badge img {
+    width: 16px;
+    height: 16px;
+    filter: none !important;
+    z-index: 11;
+}
+
+/* ---------- おすすめテキスト ---------- */
+.recommend-text {
+    height: 20px;
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff1493;
+}
+
+.recommend-text.empty {
+    visibility: hidden;
+}

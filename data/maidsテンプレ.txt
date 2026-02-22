@@ -1,0 +1,40 @@
+  {
+    "id": "1",
+    "name": "翠",
+    "birthday": "4月1日",
+    "likes": "いちごミルク",
+    "type": "王道系",
+    "message": "ご主人様を笑顔にします♡",
+    "isNew": false,
+    "isOff": false,
+    "isRecommended": false,
+    "special": {
+      "name": "姫島朱乃",
+      "type": "秘密系",
+      "message": "特別なお給仕します♡",
+      "sizes": "B88 / W56 / H84",
+      "drinksPerWeek": "3回",
+      "waterBottle": "750",
+      "lover": "？？？"
+    }
+  },
+    {
+id
+name
+birthday
+likes
+type
+message
+isNew
+isOff
+isRecommended
+special
+name
+type
+message
+sizes
+drinksPerWeek
+waterBottle
+lover
+    }
+  },
