@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("loadHeader() が呼ばれました1"); // ← ここで確認
+    console.log(`[${new Date().toLocaleTimeString()}] loadHeader() が呼ばれました`);
+
     // ===== ベースパス =====
     const BASE_PATH = location.hostname.includes("github.io")
         ? "/webPage/"
@@ -40,6 +41,5 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(err => {
             console.error("Header error:", err);
         });
-    console.log("loadHeader() が呼ばれました2"); // ← ここで確認
 
 });
