@@ -1,11 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // ===== ベースパス自動判定 =====
+    const BASE_PATH = location.hostname.includes("github.io")
+        ? "/webPage/"
+        : "/";
+
+    function asset(path) {
+        return BASE_PATH + path;
+    }
+
     const heartContainer = document.querySelector('.heart-bg');
     if (!heartContainer) return;
 
-    for (let i = 0; i < 35; i++) {   // ← 数で量調整
+    for (let i = 0; i < 35; i++) {
+
         const heart = document.createElement('img');
-        heart.src = '/images/ui/heart.png';  // ← ここ重要
+
+        // 🔥 ここを修正
+        heart.src = asset("images/ui/heart.png");
+
         heart.classList.add('heart');
 
         heart.style.left = Math.random() * 100 + 'vw';
