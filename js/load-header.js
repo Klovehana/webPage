@@ -1,24 +1,48 @@
 // ページの深さに応じて ../ を自動生成
 function getBasePath() {
-    // GitHub Pages の /webPage を除去（ローカルでは何もしない）
-    const path = window.location.pathname.replace(/^\/webPage/, "");
+    const path = window.location.pathname;
 
-    const segments = path.split("/").filter(Boolean);
-    const depth = segments.length - 1;
+    // GitHub Pages の /webPage を除去（ローカルでは影響なし）
+    const cleanedPath = path.replace(/^\/webPage/, "");
+
+    const segments = cleanedPath.split("/").filter(Boolean);
+
+    // ファイル名を除いた階層の深さ
+    const depth = segments.length > 0 ? segments.length - 1 : 0;
 
     return depth > 0 ? "../".repeat(depth) : "";
 }
 
-// header を読み込む
-fetch(getBasePath() + "components/header.html")
-    .then(res => res.text())
-    .then(data => {
-        document.body.insertAdjacentHTML("afterbegin", data);
+// DOM読み込み後に実行（重要）
+document.addEventListener("DOMContentLoaded", () => {
+    const base = getBasePath();
 
-        const base = getBasePath();
-        document.querySelectorAll("[data-link]").forEach(link => {
-            if (link.dataset.link === "home") link.href = base + "index.html";
-            if (link.dataset.link === "maids") link.href = base + "maids.html";
-            if (link.dataset.link === "menu") link.href = base + "menu.html";
+    fetch(base + "components/header.html")
+        .then(res => {
+            if (!res.ok) throw new Error("header.html が見つかりません");
+            return res.text();
+        })
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+
+            document.querySelectorAll("[data-link]").forEach(link => {
+                switch (link.dataset.link) {
+                    case "home":
+                        link.href = base + "index.html";
+                        break;
+                    case "maids":
+                        link.href = base + "maids.html";
+                        break;
+                    case "menu":
+                        link.href = base + "menu.html";
+                        break;
+                    case "special":
+                        link.href = base + "special.html";
+                        break;
+                }
+            });
+        })
+        .catch(err => {
+            console.error("Header読み込みエラー:", err);
         });
-    });
+});
