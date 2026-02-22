@@ -1,27 +1,19 @@
-// ページの深さに応じて ../ を自動生成
 function getBasePath() {
     const path = window.location.pathname;
-
-    // GitHub Pages の /webPage を除去（ローカルでは影響なし）
     const cleanedPath = path.replace(/^\/webPage/, "");
-
     const segments = cleanedPath.split("/").filter(Boolean);
-
-    // ファイル名を除いた階層の深さ
     const depth = segments.length > 0 ? segments.length - 1 : 0;
-
     return depth > 0 ? "../".repeat(depth) : "";
 }
 
-// DOM読み込み後に実行（重要）
-document.addEventListener("DOMContentLoaded", () => {
+function loadHeader() {
     const base = getBasePath();
 
+    // すでにヘッダーがあるなら何もしない
+    if (document.querySelector(".site-header")) return;
+
     fetch(base + "components/header.html")
-        .then(res => {
-            if (!res.ok) throw new Error("header.html が見つかりません");
-            return res.text();
-        })
+        .then(res => res.text())
         .then(data => {
             document.body.insertAdjacentHTML("afterbegin", data);
 
@@ -41,8 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         break;
                 }
             });
-        })
-        .catch(err => {
-            console.error("Header読み込みエラー:", err);
         });
-});
+}
+
+// 通常読み込み
+window.addEventListener("DOMContentLoaded", loadHeader);
+
+// ブラウザバック対応（←これが重要）
+window.addEventListener("pageshow", loadHeader);
