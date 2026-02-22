@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    console.log("loadHeader() が呼ばれました1"); // ← ここで確認
     // ===== ベースパス =====
     const BASE_PATH = location.hostname.includes("github.io")
         ? "/webPage/"
