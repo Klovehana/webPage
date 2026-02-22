@@ -1,8 +1,12 @@
 // ページの深さに応じて ../ を自動生成
 function getBasePath() {
-    const path = window.location.pathname.replace(/^\/WebPage/, "");
-    const depth = path.split("/").length - 2;
-    return "../".repeat(depth);
+    // GitHub Pages の /webPage を除去（ローカルでは何もしない）
+    const path = window.location.pathname.replace(/^\/webPage/, "");
+
+    const segments = path.split("/").filter(Boolean);
+    const depth = segments.length - 1;
+
+    return depth > 0 ? "../".repeat(depth) : "";
 }
 
 // header を読み込む
@@ -18,4 +22,3 @@ fetch(getBasePath() + "components/header.html")
             if (link.dataset.link === "menu") link.href = base + "menu.html";
         });
     });
-
